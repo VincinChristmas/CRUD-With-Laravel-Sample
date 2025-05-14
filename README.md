@@ -11,8 +11,8 @@
 
 <h4>1. Post Model (app/Models/Post.php)</h4>
 
-class Post extends Model
 ```php
+class Post extends Model
 {
     protected $fillable = ['title', 'content', 'category_id'];
 
@@ -22,3 +22,30 @@ class Post extends Model
     }
 }
 ```
+
+<ul>
+<li>Defines fillable fields for mass assignment</li>
+<li>Establishes relationship with Category model</li>
+</ul>
+
+<h4>2. Category Model (app/Models/Category.php)</h4>
+
+```php
+class Category extends Model
+{
+    protected $fillable = ['name'];
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+}
+```
+
+<ul>
+<li>Defines fillable fields</li>
+<li>Establishes one-to-many relationship with Post model</li>
+</ul>
+
+<h3></h3>
+
