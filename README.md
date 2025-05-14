@@ -12,6 +12,7 @@
 <h4>1. Post Model (app/Models/Post.php)</h4>
 
 class Post extends Model
+```php
 {
     protected $fillable = ['title', 'content', 'category_id'];
 
@@ -20,3 +21,4 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 }
+```
